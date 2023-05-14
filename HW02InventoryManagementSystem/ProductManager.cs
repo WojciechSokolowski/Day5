@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using HW02InventoryManagementSystem.Models;
 
 
@@ -20,20 +21,44 @@ namespace HW02InventoryManagementSystem
 
         public void AddProduct(Product product)
         {
-            db.Products.Add(product);
-            db.SaveChanges();
+            try
+            {
+                db.Products.Add(product);
+                db.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("We cannot process your data: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
         }
+
 
         public void RemoveProduct(Product product)
         {
-            db.Products.Remove(product);
-            db.SaveChanges();
+            try
+            {
+                db.Products.Remove(product);
+                db.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("We cannot process your data: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
 
         }
         public void UpdateProduct(Product product)
         {
-            db.Products.Update(product);
-            db.SaveChanges();
+            try
+            {
+                db.Products.Update(product);
+                db.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("We cannot process your data: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         public string LoadProducts()

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace HW02InventoryManagementSystem
 {
@@ -18,19 +19,40 @@ namespace HW02InventoryManagementSystem
 
         public void AddSupplier(Supplier supplier)
         {
-            db.Suppliers.Add(supplier);
-            db.SaveChanges();
+            try
+            {
+                db.Suppliers.Add(supplier);
+                db.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("We cannot process your data: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
         public void RemoveSupplier(Supplier supplier)
         {
-            db.Suppliers.Remove(supplier);
-            db.SaveChanges();
+            try
+            {
+                db.Suppliers.Remove(supplier);
+                db.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("We cannot process your data: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         public void EditSupplier(Supplier supplier)
         {
-            db.Suppliers.Update(supplier);
-            db.SaveChanges();
+            try
+            {
+                db.Suppliers.Update(supplier);
+                db.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("We cannot process your data: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         public string LoadSuppliers()

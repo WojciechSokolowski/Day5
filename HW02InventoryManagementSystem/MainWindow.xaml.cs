@@ -29,28 +29,56 @@ namespace HW02InventoryManagementSystem
 
         private Product JoinProduct(bool a)
         {
+
             Product product = new Product();
-            if (a)
-                product.ProductId = Convert.ToInt32(ProductID.Text);
-            product.Name = PName.Text;
-            product.Description=Desc.Text;
-            product.Category= Category.Text;
-            product.Quantity= Convert.ToInt32(Quantity.Text);
-            product.Price = Convert.ToDecimal(Price.Text);
-            product.SupplierId = Convert.ToInt32(RefSupplierID.Text);
+            try
+            {
+                if (a)
+                    product.ProductId = Convert.ToInt32(ProductID.Text);
+                product.Name = PName.Text;
+                product.Description = Desc.Text;
+                product.Category = Category.Text;
+                int quantity;
+                if (!int.TryParse(Quantity.Text, out quantity))
+                {
+                    throw new Exception("Invalid quantity. Please enter a valid number.");
+                }
+                product.Quantity = quantity;
+                decimal price;
+                if (!decimal.TryParse(Price.Text, out price))
+                {
+                    throw new Exception("Invalid price. Please enter a valid number.");
+                }
+                product.Price = price;
+                product.SupplierId = Convert.ToInt32(RefSupplierID.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("We cannot process your data: "+ex.Message, "Error ", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
             return product;
+
+
         }
 
         private Supplier JoinSupplier(bool a)
         {
             Supplier supplier = new Supplier();
-            if(a)
-                supplier.SupplierId = Convert.ToInt32(SupplierID.Text);
-            supplier.Name = SName.Text;
-            supplier.ContactPerson = Contact.Text;
-            supplier.Email = Email.Text;
-            supplier.Phone = Phone.Text;
-            supplier.Address = Address.Text;
+            try
+            {
+                if (a)
+                    supplier.SupplierId = Convert.ToInt32(SupplierID.Text);
+                supplier.Name = SName.Text;
+                supplier.ContactPerson = Contact.Text;
+                supplier.Email = Email.Text;
+                supplier.Phone = Phone.Text;
+                supplier.Address = Address.Text;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("We cannot process your data: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
             return supplier;
         }
 
