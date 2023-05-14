@@ -50,11 +50,16 @@ namespace HW02InventoryManagementSystem
                     throw new Exception("Invalid price. Please enter a valid number.");
                 }
                 product.Price = price;
-                product.SupplierId = Convert.ToInt32(RefSupplierID.Text);
+                int supplierID;
+                if (!int.TryParse(RefSupplierID.Text, out supplierID))
+                {
+                    throw new Exception("invalid Supplier ID in product.");
+                }
+                product.SupplierId = supplierID;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("We cannot process your data: "+ex.Message, "Error ", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("We cannot process your data: " + ex.Message, "Error ", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             return product;
 
