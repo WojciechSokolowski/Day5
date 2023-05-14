@@ -11,7 +11,7 @@ namespace HW01LibraryManagement
         public int BorrowerID { get; set; }
         public string Name { get; set; }
         public string Email { get; set; } 
-        public int  Phone { get; set; }
+        public string  Phone { get; set; }
         public int TotalBorrowedBooks { get; set; }
     }
 }

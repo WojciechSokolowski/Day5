@@ -13,6 +13,5 @@ namespace HW01LibraryManagement
         public string Author { get; set; }
         public string ISBN { get; set; }
         public bool Avalibility { get; set; }  
-
     }
 }

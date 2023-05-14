@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SQL03EFDatabaseFirst", "SQL
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SQL04EFCodeFirst", "SQL04EFCodeFirst\SQL04EFCodeFirst.csproj", "{9130F2CE-B181-4373-A1B7-EE7BD8C12A69}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HW01LibraryManagement", "HW01LibraryManagement\HW01LibraryManagement.csproj", "{31067D98-5FB0-462D-A128-BC4461364646}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HW01LibraryManagement", "HW01LibraryManagement\HW01LibraryManagement.csproj", "{31067D98-5FB0-462D-A128-BC4461364646}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HW02InventoryManagementSystem", "HW02InventoryManagementSystem\HW02InventoryManagementSystem.csproj", "{46A0CD49-56D5-44CB-982B-E185FBE4C534}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{31067D98-5FB0-462D-A128-BC4461364646}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{31067D98-5FB0-462D-A128-BC4461364646}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{31067D98-5FB0-462D-A128-BC4461364646}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46A0CD49-56D5-44CB-982B-E185FBE4C534}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46A0CD49-56D5-44CB-982B-E185FBE4C534}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46A0CD49-56D5-44CB-982B-E185FBE4C534}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46A0CD49-56D5-44CB-982B-E185FBE4C534}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

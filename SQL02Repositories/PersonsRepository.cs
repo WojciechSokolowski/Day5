@@ -78,10 +78,12 @@ namespace SQL02Repositories
                 {
                     cmd.Parameters.AddWithValue("@FirstName", person.FirstName);
                     cmd.Parameters.AddWithValue("@LastName", person.LastName);
-                    int rowsAffected = cmd.ExecuteNonQuery();
-                    Console.WriteLine($"{rowsAffected} rows affected");
-                }
+                    {
+                        int rowsAffected = cmd.ExecuteNonQuery();
+                        Console.WriteLine($"{rowsAffected} rows affected");
+                    }
 
+                }
             }
         }
 
