@@ -97,14 +97,7 @@ namespace HW01LibraryManagement
                     SqlCommand command = new SqlCommand("DELETE FROM Borrowers WHERE BorrowerID = @BorrowerID", connection);
                     command.Parameters.AddWithValue("@BorrowerID", borrowerID);
                     int rowsAffected = command.ExecuteNonQuery();
-                    if (rowsAffected > 0)
-                    {
-                        Console.WriteLine("Borrower deleted successfully.");
-                    }
-                    else
-                    {
-                        Console.WriteLine("Borrower not found.");
-                    }
+
                 }
             }
             catch (SqlException ex)
@@ -131,14 +124,6 @@ namespace HW01LibraryManagement
                     command.Parameters.AddWithValue("@Phone", updatedBorrower.Phone);
                     command.Parameters.AddWithValue("@TotalBorrowedBooks", updatedBorrower.TotalBorrowedBooks);
                     int rowsAffected = command.ExecuteNonQuery();
-                    if (rowsAffected > 0)
-                    {
-                        Console.WriteLine("Borrower updated successfully.");
-                    }
-                    else
-                    {
-                        Console.WriteLine("Borrower not found.");
-                    }
                 }
             }
             catch (SqlException ex)

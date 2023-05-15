@@ -21,10 +21,11 @@ if (isLoggedIn)
 
     Book newBook = new Book()
     {
-        Title = "Test",
-        Author = "Test",
-        ISBN = "Test",
-        Avalibility = true
+        BookID = 4,
+        Title = "Hobbit",
+        Author = "J.R.R. Tolkien",
+        ISBN = "999000",
+        Avalibility = false
     };
     Book newBook2 = new Book()
     {
@@ -44,7 +45,7 @@ if (isLoggedIn)
 
     //bookRepository.AddBook(newBook);
 
-    //bookRepository.EditBook(newBook2);
+    bookRepository.EditBook(newBook);
 
     //bookRepository.DeleteBook(2);
 
@@ -61,11 +62,16 @@ if (isLoggedIn)
         Name = "Grzegorz Brzeczyszczykiewicz",
         Email = @"gb@gmail.com",
         Phone = "6662137666",
-        TotalBorrowedBooks = 0
+        TotalBorrowedBooks = 1
     };
 
+    DateTime dateTime = new DateTime(2022, 10, 15, 14, 30, 0);
+    DateTime dateTime2 = new DateTime(2022, 10, 30, 14, 30, 0);
+    AdditionalFunctionalities.ReturnWithFee(newBook, borrower2,dateTime2,dateTime);
+
     BorrowersRepository borrowersRepository = new BorrowersRepository();
-    borrowersRepository.AddBorrower(borrower);
+    //borrowersRepository.AddBorrower(borrower);
+
     Borrower[] borrowers = borrowersRepository.GetBorrower();
 
     foreach (var b in borrowers)
@@ -73,15 +79,16 @@ if (isLoggedIn)
         Console.WriteLine(b.BorrowerID + "\t" + b.Name + "\t" + b.Email + "\t" + b.Phone + "\t" + b.TotalBorrowedBooks);
     }
 
-    borrowersRepository.EditBorrower(borrower2);
-    borrowersRepository.DeleteBorrower(3);
+    //   borrowersRepository.EditBorrower(borrower2);
+    //    borrowersRepository.DeleteBorrower(3);
 
-    Borrower[] borrowers2 = borrowersRepository.GetBorrower();
+    //   Borrower[] borrowers2 = borrowersRepository.GetBorrower();
 
-    foreach (var b in borrowers2)
-    {
-        Console.WriteLine(b.BorrowerID + "\t" + b.Name + "\t" + b.Email + "\t" + b.Phone + "\t" + b.TotalBorrowedBooks);
-    }
+    //foreach (var b in borrowers2)
+    //{
+    //    Console.WriteLine(b.BorrowerID + "\t" + b.Name + "\t" + b.Email + "\t" + b.Phone + "\t" + b.TotalBorrowedBooks);
+    //}
+
 
 }
 else 
